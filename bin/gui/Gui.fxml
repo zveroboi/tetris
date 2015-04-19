@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.input.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="mainLayout" cacheShape="false" maxHeight="1000.0" maxWidth="800.0" minHeight="600.0" minWidth="450.0" scaleShape="false" styleClass="background" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GuiController">
+	<children>
+      <BorderPane maxHeight="800.0" maxWidth="600.0" minHeight="550.0" minWidth="450.0" prefHeight="550.0" prefWidth="450.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <GridPane fx:id="mainGrid" hgap="10.0" maxHeight="800.0" maxWidth="600.0" minHeight="550.0" minWidth="450.0" vgap="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="SCORE:" textFill="#9ef5f5">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label text="HIGH SCORE:" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.4943820224719101" centerY="0.7548076923076923" focusAngle="-94.4" focusDistance="1.0" radius="0.7619047619047619">
+                           <stops>
+                              <Stop color="#3cd9f8" />
+                              <Stop color="#c9e00b" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </Label>
+                  <Text fx:id="scoreValue" fill="#9ef5f5" strokeType="OUTSIDE" strokeWidth="0.0" text="4566" wrappingWidth="197.083984375" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="highScoreValue" onInputMethodTextChanged="#initialize" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="135.083984375" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <fill>
+                        <RadialGradient centerX="0.29213483146067415" centerY="0.5432692307692308" focusAngle="-94.4" focusDistance="1.0" radius="0.7619047619047619">
+                           <stops>
+                              <Stop color="#1c9fd6" />
+                              <Stop color="#c9e00b" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <VBox maxHeight="600.0" maxWidth="300.0" minHeight="400.0" minWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <BorderPane maxHeight="200.0" maxWidth="250.0" minHeight="100.0" minWidth="100.0">
+                           <center>
+                              <AnchorPane maxHeight="250.0" maxWidth="250.0" minHeight="122.0" minWidth="150.0" prefHeight="122.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <BorderPane maxHeight="200.0" maxWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <center>
+                                          <Rectangle fx:id="nbpBackground" arcHeight="10.0" arcWidth="10.0" fill="#4d3982" height="81.0" stroke="BLACK" strokeType="INSIDE" width="81.0" BorderPane.alignment="CENTER" />
+                                       </center>
+                                    </BorderPane>
+                                    <BorderPane maxWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <center>
+                                          <GridPane fx:id="nextBrickPanel" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" prefHeight="80.0" prefWidth="80.0" BorderPane.alignment="CENTER">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                       </center>
+                                    </BorderPane>
+                                 </children>
+                              </AnchorPane>
+                           </center>
+                           <top>
+                              <Label alignment="CENTER" maxHeight="50.0" minHeight="20.0" minWidth="200.0" prefHeight="32.0" prefWidth="200.0" text="NEXT BRICK:" textAlignment="CENTER" textFill="#ffb36d" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                           </top>
+                        </BorderPane>
+                        <AnchorPane prefHeight="73.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane prefHeight="57.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <center>
+                                    <Text fx:id="levelValue" fill="#fff530" onInputMethodTextChanged="#initialize" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="71.083984375" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Text>
+                                 </center>
+                                 <top>
+                                    <Label text="LEVEL:" textFill="#ffb36d" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </top>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="73.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane prefHeight="57.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <center>
+                                    <Text fx:id="rowsValue" fill="#fff530" onInputMethodTextChanged="#initialize" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="67.083984375" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Text>
+                                 </center>
+                                 <top>
+                                    <Label text="ROWS:" textFill="#ffb36d" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </top>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane layoutX="74.0" layoutY="-39.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <bottom>
+                                    <Text fx:id="info" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Use arrow keys (←, ↑, →, ↓)  for movement  and rotating. N - start new  game. P - play/pause. A - auto game." wrappingWidth="150.083984375" BorderPane.alignment="CENTER">
+                                       <fill>
+                                          <LinearGradient endX="0.47115384615384615" endY="0.004807692307692291" startX="0.596153846153846" startY="0.625">
+                                             <stops>
+                                                <Stop color="#eeff52" />
+                                                <Stop color="#00edc7f7" offset="0.9666666666666667" />
+                                                <Stop color="#00edc7f7" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </fill>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <BorderPane.margin>
+                                          <Insets left="10.0" />
+                                       </BorderPane.margin>
+                                    </Text>
+                                 </bottom>
+                                 <center>
+                                    <ToggleButton fx:id="pauseButton" minHeight="33.0" minWidth="140.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="140.0" text="PAUSE" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                                       <graphic>
+                                          <PointLight color="CHARTREUSE" lightOn="true" />
+                                       </graphic>
+                                    </ToggleButton>
+                                 </center>
+                                 <top>
+                                    <Button fx:id="newGameButton" minHeight="33.0" minWidth="140.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="140.0" text="NEW GAME" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+                                 </top>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+                  <AnchorPane maxHeight="600.0" maxWidth="300.0" minHeight="400.0" minWidth="200.0" GridPane.rowIndex="2">
+                     <children>
+                        <Rectangle fx:id="gpBackground" arcHeight="10.0" arcWidth="10.0" fill="#4d3982" height="432.0" onKeyPressed="#initialize" stroke="BLACK" strokeType="INSIDE" width="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <GridPane fx:id="gamePanel" maxHeight="600.0" maxWidth="300.0" minHeight="400.0" minWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <center>
+                              <Label fx:id="gameOverLabel" prefHeight="54.0" prefWidth="178.0" text="GAME OVER" textAlignment="CENTER" visible="false" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font size="29.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0" startX="0.038461538461538436">
+                                       <stops>
+                                          <Stop color="#e41515" />
+                                          <Stop color="#7c1260" offset="0.67" />
+                                          <Stop color="#bc2b2b" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Label>
+                           </center>
+                        </BorderPane>
+                        <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <center>
+                              <Label fx:id="pauseLabel" prefHeight="54.0" prefWidth="101.0" text="PAUSE" textAlignment="CENTER" visible="false" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#d98e41" />
+                                          <Stop color="#801818" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Label>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="200.0" prefWidth="200.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="150.0" prefWidth="200.0" />
+               </columnConstraints>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <rowConstraints>
+                  <RowConstraints maxHeight="45.0" minHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="45.0" minHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="800.0" minHeight="400.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+         </center>
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="Tetris">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#newGame" text="New Game">
+                           <accelerator>
+                              <KeyCodeCombination alt="ANY" code="N" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#pause" text="Play/Pause">
+                           <accelerator>
+                              <KeyCodeCombination alt="ANY" code="P" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#autoGame" text="Auto Game">
+                           <accelerator>
+                              <KeyCodeCombination alt="ANY" code="A" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#saveReplay" text="Save">
+                           <accelerator>
+                              <KeyCodeCombination alt="ANY" code="S" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#loadReplay" text="Load Replay">
+                           <accelerator>
+                              <KeyCodeCombination alt="ANY" code="L" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#quit" text="Quit">
+                           <accelerator>
+                              <KeyCodeCombination alt="ANY" code="Q" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                  </items>
+                </Menu>
+                <Menu disable="true" mnemonicParsing="false" text="Settings" visible="false">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Settings">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="S" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                  </items>
+                </Menu>
+                <Menu disable="true" mnemonicParsing="false" text="Load Replay" visible="false">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="A" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+      </BorderPane>
+	</children>
+</AnchorPane>
